@@ -1,0 +1,4 @@
+{>layout/}
+{<content}
+    <p> Welcome to {title}</p>
+{/content}

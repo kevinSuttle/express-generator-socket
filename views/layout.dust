@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{title}</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    {+content}
+    Success. Prototype is ready.
+    {/content}
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('news', function (data) {
+          console.log(data);
+          socket.emit('my other event', { my: 'data' });
+      });
+        socket.on('some event', function(msg){
+          console.log(msg)
+      });
+  </script>
+</body>
+</html>
